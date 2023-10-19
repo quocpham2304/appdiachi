@@ -13,7 +13,7 @@ function App() {
     <Routes>
       <Route path='/appdiachi' element={<ListAddress/>} />
       <Route path='/appdiachi/chinhsuadiachi/' element={<EditAddress/>} />
-      <Route path='/appdiachi/themmoidiachi' element={<AddAddress/>} />
+      <Route path='/appdiachi/themmoidiachi/' element={<AddAddress/>} />
     </Routes>
     </BrowserRouter>
   );
