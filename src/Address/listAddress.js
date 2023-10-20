@@ -6,11 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { apiConstants, token } from '../Const/api';
-import { Navigate } from 'react-router';
+import { Navigate, useNavigate } from 'react-router';
 
 const ListAddress = () => {
     const { Title, Text } = Typography;
     const [danhSachDiaChi, setDSDC] = useState([]);
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/appdiachi/themmoidiachi/');
+     };
     const getDSDC = async () => {
         
         const res = await axios.get(apiConstants.DANH_SACH_DIA_CHI, {
@@ -47,7 +51,7 @@ const ListAddress = () => {
                     <Row
                         align="middle"
                         style={{ alignItems: "center", paddingLeft: "40%" }}>
-                        <Button href="/appdiachi/themmoidiachi/">
+                        <Button onClick ={handleClick}>
                             thêm mới
                         </Button>
                     </Row>
